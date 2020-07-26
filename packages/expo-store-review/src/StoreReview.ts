@@ -58,11 +58,11 @@ export async function requestReview(): Promise<void> {
 export function storeUrl(): string | null {
   const { manifest } = Constants;
   // eslint-disable-next-line no-undef
-  if (Platform.OS === 'ios' && manifest?.ios) {
-    return manifest.ios.appStoreUrl;
+  if (Platform.OS === 'ios') {
+    return 'www.google.com';
     // eslint-disable-next-line no-undef
-  } else if (Platform.OS === 'android' && manifest?.android) {
-    return manifest.android.playStoreUrl;
+  } else if (Platform.OS === 'android') {
+    return 'https://play.google.com/store/apps/details?id=com.facebook.lite';
   }
   return null;
 }
